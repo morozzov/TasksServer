@@ -1,0 +1,28 @@
+package com.example.tasks.controllers;
+
+import com.example.tasks.dtos.TasksResponseDto;
+import com.example.tasks.services.TasksService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping(path = "/tasks", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@AllArgsConstructor
+public class TasksController {
+    @Autowired
+    private TasksService tasksService;
+
+    @GetMapping(value = "/getAll")
+    public ArrayList<TasksResponseDto> getAll() {
+        return tasksService.getAll();
+    }
+
+    @GetMapping(value = "/getById/{id}")
+    public TasksResponseDto getById(@PathVariable int id) {
+        return tasksService.getById(id);
+    }
+
+}
