@@ -1,6 +1,7 @@
 package com.example.tasks.controllers;
 
-import com.example.tasks.dtos.TasksResponseDto;
+import com.example.tasks.dtos.response.TasksListResponseDto;
+import com.example.tasks.dtos.response.TasksResponseDto;
 import com.example.tasks.services.TasksService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class TasksController {
     private TasksService tasksService;
 
     @GetMapping(value = "/getAll")
-    public ArrayList<TasksResponseDto> getAll() {
+    public TasksListResponseDto getAll() {
         return tasksService.getAll();
     }
 

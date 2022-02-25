@@ -1,6 +1,8 @@
-package com.example.tasks.dtos;
+package com.example.tasks.dtos.response;
+import lombok.Data;
 
-public class TasksRequestDto {
+@Data
+public class TasksResponseDto {
     public int id;
     public String title;
     public boolean completed;
