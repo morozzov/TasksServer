@@ -32,4 +32,8 @@ public class TasksService {
 
         return tasksResponseDto;
     }
+
+    public void deleteById(int id) {
+        tasksRepository.deleteById(id);
+    }
 }

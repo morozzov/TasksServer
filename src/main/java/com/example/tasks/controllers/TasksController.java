@@ -25,4 +25,6 @@ public class TasksController {
         return tasksService.getById(id);
     }
 
+    @DeleteMapping(value = "/deleteById/{id}")
+    public void deleteById(@PathVariable int id) { tasksService.deleteById(id); }
 }
